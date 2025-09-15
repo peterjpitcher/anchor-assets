@@ -48,6 +48,17 @@
         .nav-item.active { border-color: var(--orange); transform: scale(1.05); }
         .nav-item.active .numdot { background: var(--orange); }
         .nav-item:hover { border-color: var(--orange); transform: scale(1.03); }
+        /* Mobile adjustments: move nav to bottom and add bottom padding so it doesn't cover content */
+        @media (max-width: 768px) {
+            .nav-dots {
+                right: auto; left: 50%; top: auto; bottom: 12px; transform: translateX(-50%);
+                display: flex; gap: 8px; background: rgba(255,255,255,0.95);
+                padding: 6px 10px; border-radius: 24px; box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+                max-width: 95%; overflow-x: auto; -webkit-overflow-scrolling: touch;
+            }
+            .nav-item { margin: 0; flex: 0 0 auto; }
+            .section, .section-full { padding-bottom: 140px; }
+        }
         .quote { font-size: 1.3rem; font-style: italic; color: var(--gray); padding: 30px; border-left: 4px solid var(--orange); margin: 30px 0; background: white; border-radius: 0 8px 8px 0; width: 100%; box-sizing: border-box; }
         .fade-in { animation: fadeIn 0.8s ease-in; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(20px);} to { opacity: 1; transform: translateY(0);} }
